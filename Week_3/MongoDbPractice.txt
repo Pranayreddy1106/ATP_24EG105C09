@@ -1,0 +1,170 @@
+// 1. Create employees collection and insert 5 emp documents with below
+  Structure
+
+       {
+              empId:"",
+              name:"",
+              skills:[],
+              experiences:[
+                     {
+                            companyName:",
+                            yearsOfExp:"
+                     }
+              ]
+       }
+
+
+Code :
+	use myDB
+switched to db myDB
+db.employees.insertOne({
+    empId: "E101",
+    name: "Vikas",
+    skills: ["JavaScript","React","Node"],
+    experiences: [
+        {
+            companyName: "TCS",
+            yearsOfExp: 2
+        }
+    ]
+})
+{
+  acknowledged: true,
+  insertedId: ObjectId('69b2c01606cfd7109620f0e8')
+}
+db.employees.insertOne({
+    empId: "E102",
+    name: "Rahul",
+    skills: ["Java","Spring"],
+    experiences: [
+        {
+            companyName: "Infosys",
+            yearsOfExp: 3
+        }
+    ]
+})
+{
+  acknowledged: true,
+  insertedId: ObjectId('69b2c02506cfd7109620f0e9')
+}
+db.employees.insertOne({
+    empId: "E103",
+    name: "Anita",
+    skills: ["React","HTML","CSS"],
+    experiences: [
+        {
+            companyName: "Wipro",
+            yearsOfExp: 1
+        }
+    ]
+})
+{
+  acknowledged: true,
+  insertedId: ObjectId('69b2c02d06cfd7109620f0ea')
+}
+db.employees.insertOne({
+    empId: "E104",
+    name: "Kiran",
+    skills: ["Python","Django"],
+    experiences: [
+        {
+            companyName: "Capgemini",
+            yearsOfExp: 2
+        }
+    ]
+})
+{
+  acknowledged: true,
+  insertedId: ObjectId('69b2c03406cfd7109620f0eb')
+}
+db.employees.insertOne({
+    empId: "E105",
+    name: "Suresh",
+    skills: ["Node","MongoDB"],
+    experiences: [
+        {
+            companyName: "TechMahindra",
+            yearsOfExp: 4
+        }
+    ]
+})
+
+
+2. db.employees.find({skills:"React"})
+{
+  _id: ObjectId('69b2c01606cfd7109620f0e8'),
+  empId: 'E101',
+  name: 'Vikas',
+  skills: [
+    'JavaScript',
+    'React',
+    'Node'
+  ],
+  experiences: [
+    {
+      companyName: 'TCS',
+      yearsOfExp: 2
+    }
+  ]
+}
+{
+  _id: ObjectId('69b2c02d06cfd7109620f0ea'),
+  empId: 'E103',
+  name: 'Anita',
+  skills: [
+    'React',
+    'HTML',
+    'CSS'
+  ],
+  experiences: [
+    {
+      companyName: 'Wipro',
+      yearsOfExp: 1
+    }
+  ]
+}
+
+
+3. Add new skills "Express"
+	db.employees.updateMany({},{$push:{skills:"Express"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 10,
+  modifiedCount: 10,
+  upsertedCount: 0
+}
+myDB
+
+
+
+4. Add new experience
+
+db.employees.updateOne({empId:"E101"},{$push:{experiences:{companyName:"Amazon",yearsOfExp:1}}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+
+5. Delete first experience
+db.employees.updateOne({empId:"E101"},{$pop:{experiences:-1}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+
+6. Add address to emp whose name is "vikas"
+db.employees.updateOne({name:"Vikas"},{$set:{address:"Hyderabad"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}

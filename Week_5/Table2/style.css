@@ -1,0 +1,17 @@
+table{
+    
+    width: 500px;
+}
+
+table,th,td{
+   
+    border: 3px solid black;
+    border-collapse: collapse;
+}
+
+th{
+    text-align: left;
+}
+td{
+    text-align: center;
+}

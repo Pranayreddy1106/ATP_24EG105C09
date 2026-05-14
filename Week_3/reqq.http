@@ -1,0 +1,84 @@
+### read all users(request ot a protected route)
+GET http://localhost:4000/user-api/users
+// even if even we dont mention the token in the header, it will be attached to the request automatically because these tools contains a feature called cookie jar
+
+### read user by id
+GET http://localhost:4000/user-api/user
+
+### create user
+POST http://localhost:4000/user-api/users
+Content-Type: application/json
+
+{
+    "username": "surya",
+    "password": "suryaaa",
+    "email": "surya@gmail.com",
+    "age": 21
+}
+
+### update user by id
+PUT http://localhost:4000/user-api/users/69abf030f9e7e0628f137046
+Content-Type: application/json
+Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZ5b21AZ21haWwuY29tIiwiaWF0IjoxNzcyODc2MzYwLCJleHAiOjE3NzI4Nzk5NjB9.qhijdB-39ocUmGfFN7a3VYu4Yei0NCGpqUvjzAUsXPI; Path=/; HttpOnly; SameSite=Lax
+
+{
+    "username": "Suryaaa",
+    "password": "surya",
+    "email": "suryaaa@gmail.com",
+    "age": 20
+}
+
+### delete user by id
+DELETE http://localhost:4000/user-api/users/69abd87353a379e6b5a759fe
+
+### add product to user cart
+PUT http://localhost:4000/user-api/cart/product-id/69b255872c483ea9cbfbfbbd
+
+
+
+###user login
+POST http://localhost:4000/user-api/auth
+Content-Type: application/json
+Authorization: Bearer <token>
+
+{
+    "email": "surya@gmail.com",
+    "password": "suryaaa"
+}
+
+
+
+### read all product
+GET http://localhost:4000/product-api/products
+
+### read product by id
+GET http://localhost:4000/product-api/products/69abd79553a379e6b5a759f2
+
+### create product
+POST http://localhost:4000/product-api/products
+Content-Type: application/json
+
+{
+    "productId": "10138",
+    "productName": "Ipad",
+    "pice": 50000,
+    "brand": "Apple"
+}
+
+### update product by id
+PUT http://localhost:4000/product-api/products/69abd6ab9376fe1ca633db83
+Content-Type: application/json
+
+{
+    "productId": "10133",
+    "productName": "Mobile",
+    "pice": 45000,
+    "brand": "Samsung"
+}
+
+### delete product by id
+DELETE http://localhost:4000/product-api/products/69abd79553a379e6b5a759f2   
+
+
+
+

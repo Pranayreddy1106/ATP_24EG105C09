@@ -1,0 +1,30 @@
+### read all products
+GET http://localhost:3000/user-api/users
+
+### read product by id
+GET http://localhost:3000/user-api/users
+
+### create product
+POST http://localhost:3000/user-api/users
+Content-Type: application/json
+
+{
+    "productID": 1,
+    "name": "laptop",
+    "brand": "hp",
+    "price": 100000
+}
+
+### update product
+PUT http://localhost:3000/user-api/users
+Content-Type: application/json
+
+{
+    "productID": 1,
+    "name": "laptop",
+    "brand": "dell",
+    "price": 150000
+}
+
+### delete product
+DELETE http://localhost:3000/user-api/users/1   
