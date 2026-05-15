@@ -24,3 +24,6 @@ we use  react  hooks  and  contexts  and  build  backend  for  employees .
 ---
 
 full  stack  is  hard  work  but  now  we  can  build  real  websites .
+
+
+DEPLOYMENT link- https://emp-app-frontend-v2.vercel.app/
