@@ -25,6 +25,4 @@ dis is my total work for the full course from week 1 to week 7 . i do everything
 7.  **Logout** : after work is finish user can logout and the jwt token is clear from browser . 
 
 ---
-
-###   Final Submit Message :
-everything is tested and working 100% . thank you for teaching us !!
+DEPLOYMENT LINK - https://blog-app-frontend-neon.vercel.app/
